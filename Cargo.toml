@@ -1,6 +1,6 @@
 [package]
 name = "glasses"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["J Pratt <jp10010101010000@gmail.com>"]
 edition = "2021"
 include = ["src/**/*", "LICENSE.md", "README.md"]
