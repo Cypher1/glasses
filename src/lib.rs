@@ -30,7 +30,12 @@ macro_rules! glasses_make_case {
 #[macro_export]
 macro_rules! glasses_harness {
     ($harness_name: ident, $builder_type: ty, $test_body: expr) => {
-        $crate::glasses_harness!($harness_name, $builder_type, <$builder_type>::default(), $test_body);
+        $crate::glasses_harness!(
+            $harness_name,
+            $builder_type,
+            <$builder_type>::default(),
+            $test_body
+        );
     };
     ($harness_name: ident, $builder_type: ty, $builder: expr, $test_body: expr) => {
         struct $harness_name;
@@ -44,7 +49,7 @@ macro_rules! glasses_harness {
                 $test_body(case)
             }
         }
-    }
+    };
 }
 
 #[macro_export]

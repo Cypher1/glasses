@@ -19,7 +19,7 @@ impl ExpectedValue {
 glasses_harness!(
     SimpleTestHarness,
     ExpectedValue,
-    ExpectedValue{
+    ExpectedValue {
         value: None,
         expected: None,
     },
