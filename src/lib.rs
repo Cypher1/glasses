@@ -33,7 +33,7 @@ macro_rules! glasses_harness {
         $crate::glasses_harness!($harness_name, $builder_type, <$builder_type>::default(), $test_body);
     };
     ($harness_name: ident, $builder_type: ty, $builder: expr, $test_body: expr) => {
-        pub struct $harness_name;
+        struct $harness_name;
 
         impl glasses::Harness for $harness_name {
             type Builder = $builder_type;
