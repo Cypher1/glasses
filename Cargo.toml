@@ -1,0 +1,14 @@
+[package]
+name = "glasses"
+version = "0.1.0"
+authors = ["J Pratt <jp10010101010000@gmail.com>"]
+edition = "2021"
+include = ["src/**/*", "LICENSE.md", "README.md"]
+description = "Macros for writing lots of tests (or specs!)"
+license = "MIT"
+repository = "https://github.com/Cypher1/glasses"
+
+[features]
+default = []
+
+[dependencies]
