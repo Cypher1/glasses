@@ -12,6 +12,9 @@ pub trait Buildable {
 
 #[macro_export]
 macro_rules! glasses_builder_validator{
+    ($self: expr, $field: ident, $value: expr, $type: ty, [drop] $([$meta: ident $($arg: expr)*])*) => {{
+        glasses_builder_validator!($self, $field, $value, $type, $([$meta $($arg)*])*)
+    }};
     ($self: expr, $field: ident, $value: expr, $type: ty, [with $pred: expr] $([$meta: ident $($arg: expr)*])*) => {{
         let value = $value;
         assert!($pred($self), "predicate associated with {} failed:\n{}", stringify!($field), stringify!($pred));
@@ -44,6 +47,9 @@ macro_rules! glasses_builder_validator{
 
 #[macro_export]
 macro_rules! glasses_builder_value{
+    ($field: ident, $value: expr, $type: ty, [drop] $([$meta: ident $($arg: expr)*])*) => {{
+        glasses_builder_value!($field, $value, $type, $([$meta $($arg)*])*)
+    }};
     ($field: ident, $value: expr, $type: ty, [with $pred: expr] $([$meta: ident $($arg: expr)*])*) => {{
         glasses_builder_value!($field, $value, $type, $([$meta $($arg)*])*)
     }};
@@ -72,6 +78,9 @@ macro_rules! glasses_builder_value{
 
 #[macro_export]
 macro_rules! glasses_builder_field_setter{
+    ($field: ident, $value: expr, $new_value: expr, $type: ty [drop] $([$meta: ident $($arg: expr)*])*) => {{
+        glasses_builder_field_setter!($field, $value, $new_value, $type $([$meta $($arg)*])*)
+    }};
     ($field: ident, $value: expr, $new_value: expr, $type: ty [with $pred: expr] $([$meta: ident $($arg: expr)*])*) => {{
         glasses_builder_field_setter!($field, $value, $new_value, $type $([$meta $($arg)*])*)
     }};
@@ -98,6 +107,9 @@ macro_rules! glasses_builder_field_setter{
 
 #[macro_export]
 macro_rules! glasses_builder_field_type {
+    ($type: ty [drop] $([$meta: ident $($arg: expr)*])*) => {
+        glasses_builder_field_type!($type $([$meta $($arg)*])*)
+    };
     ($type: ty [with $pred: expr] $([$meta: ident $($arg: expr)*])*) => {
         glasses_builder_field_type!($type $([$meta $($arg)*])*)
     };

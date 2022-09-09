@@ -11,7 +11,7 @@ glasses_builder!(
     ExpectedValue,
     value i32 [at_least 1] [many],
     expected i32 [optional],
-    other i32 [optional]
+    other i32 [optional] [drop]
     [with |case: &ExpectedValueBuilder| {
         case.other.is_none() ||
         case.expected.is_none() ||
