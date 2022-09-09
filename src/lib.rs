@@ -1,3 +1,5 @@
+pub mod builder;
+
 pub trait Harness {
     type Builder;
     fn new_builder() -> Self::Builder;

@@ -12,3 +12,4 @@ repository = "https://github.com/Cypher1/glasses"
 default = []
 
 [dependencies]
+paste = "1.0.9"
