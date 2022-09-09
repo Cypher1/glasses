@@ -61,17 +61,9 @@ macro_rules! make_failing_test {
     }
 }
 
-make_test!(
-    macro_equality_passes,
-    0,
-    0
-);
+make_test!(macro_equality_passes, 0, 0);
 
-make_failing_test!(
-    macro_inequality_panics,
-    1,
-    0
-);
+make_failing_test!(macro_inequality_panics, 1, 0);
 
 make_test!(
     macro_equality_passes_and_supports_extra_builder_mods,
